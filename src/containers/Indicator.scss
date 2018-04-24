@@ -1,0 +1,53 @@
+.indicator {
+  margin-bottom: 2rem;
+
+  .dropIndicator {
+    border: 3px #ddd dashed;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    z-index: -1;
+  }
+
+  .dragIndicator, .addIndicator {
+    background-color: #fff;
+    border-radius: 3px;
+    color: #333;
+    min-height: 22rem;
+    opacity: 1;
+    padding: 2rem;
+    position: relative;
+
+    .closeIcon {
+      color: #999;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      &:hover {
+        color: darkred;
+        cursor: pointer;
+      }
+    }
+
+    .indicatorIcon {
+      display: block;
+      font-size: 5rem;
+      text-align: center;
+    }
+
+    .description {
+      i.ico {
+        font-size: 1.8rem;
+        margin: 0 0 0 1rem;
+      }
+    }
+  }
+
+  .addIndicator {
+    background-color: darkred;
+  }
+
+}

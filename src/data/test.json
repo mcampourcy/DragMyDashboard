@@ -1,0 +1,113 @@
+[
+  {
+    "id": 1,
+    "icon": "sword",
+    "name": "Combat weapon",
+    "data": {
+      "name": "sword",
+      "damages": "2d6",
+      "cost": 0,
+      "stock": 1
+    },
+    "selected": true,
+    "position": 1
+  },
+  {
+    "id": 2,
+    "icon": "bow",
+    "name": "Remote Weapon",
+    "data": {
+      "name": "bow",
+      "damages": "1d8",
+      "cost": 0,
+      "stock": 1
+    },
+    "selected": true,
+    "position": 2
+  },
+  {
+    "id": 3,
+    "icon": "arrows",
+    "name": "Ammunitions",
+    "data": {
+      "name": "arrow",
+      "damages": "1d4",
+      "cost": 0.05,
+      "stock": 100
+    },
+    "selected": true,
+    "position": 3
+  },
+  {
+    "id": 4,
+    "icon": "poison",
+    "name": "Potions",
+    "data": {
+      "name": "healing",
+      "cost": 0,
+      "stock": 1
+    },
+    "selected": true,
+    "position": 4
+  },
+  {
+    "id": 5,
+    "icon": "bonfire",
+    "name": "Survival",
+    "data": {
+      "name": "compass",
+      "cost": 10,
+      "stock": 1
+    },
+    "selected": false,
+    "position": 5
+  },
+  {
+    "id": 6,
+    "icon": "handcuffs",
+    "name": "Got you !",
+    "data": {
+      "name": "handcuffs",
+      "cost": 15,
+      "stock": 1
+    },
+    "selected": false,
+    "position": 6
+  },
+  {
+    "id": 7,
+    "icon": "tools",
+    "name": "I got a flat tire",
+    "data": {
+      "name": "crowbar",
+      "cost": 2,
+      "stock": 1
+    },
+    "selected": false,
+    "position": 7
+  },
+  {
+    "id": 8,
+    "icon": "blind-walking",
+    "name": "Blind in the dark",
+    "data": {
+      "name": "lantern",
+      "cost": 12,
+      "stock": 1
+    },
+    "selected": false,
+    "position": 8
+  },
+  {
+    "id": 9,
+    "icon": "tent",
+    "name": "Camping",
+    "data": {
+      "name": "sleepingBag",
+      "cost": 0.10,
+      "stock": 1
+    },
+    "selected": false,
+    "position": 9
+  }
+]
