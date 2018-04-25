@@ -76,6 +76,10 @@ const config = {
             }
         }),
         new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default'],
             fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
         }),
         // Use the plugin to specify the resulting filename (and add needed behavior to the compiler)
