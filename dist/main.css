@@ -1,3 +1,72 @@
+.addIndicator {
+  background-color: transparent; }
+  .addIndicator h2 {
+    margin: 0 0 1.5rem; }
+  .addIndicator .addIcon {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: block;
+  height: 100vh;
+  padding: 35px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2; }
+.modal .container {
+  background-color: #fff;
+  color: #333;
+  z-index: 3; }
+  .modal .container .indicatorIcon {
+    display: block;
+    font-size: 6rem;
+    margin-top: 1.5rem;
+    text-align: center; }
+  .modal .container .indicatorCard {
+    margin: 2rem; }
+    .modal .container .indicatorCard:hover {
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      transition: box-shadow .15s ease-in-out; }
+.indicator {
+  margin-bottom: 2rem; }
+  .indicator .dropIndicator {
+    border: 3px #ddd dashed;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    z-index: -1; }
+  .indicator .dragIndicator {
+    background-color: #fff;
+    border-radius: 3px;
+    color: #333;
+    min-height: 22rem;
+    opacity: 1;
+    padding: 2rem;
+    position: relative; }
+    .indicator .dragIndicator .closeIcon {
+      color: #999;
+      position: absolute;
+      top: 8px;
+      right: 8px; }
+      .indicator .dragIndicator .closeIcon:hover {
+        color: darkred;
+        cursor: pointer; }
+    .indicator .dragIndicator .indicatorIcon {
+      display: block;
+      font-size: 5rem;
+      text-align: center; }
+    .indicator .dragIndicator .description i.ico {
+      font-size: 1.8rem;
+      margin: 0 0 0 1rem; }
 button {
   text-align: center;
   white-space: nowrap;
@@ -30,56 +99,6 @@ button {
     background-color: #007bff;
     border-color: #007bff;
     opacity: .65; }
-select {
-  display: block;
-  cursor: pointer;
-  padding: .7rem 1.2rem;
-  line-height: 1.5;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: .25rem;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  left: 50%; }
-.indicator {
-  margin-bottom: 2rem; }
-  .indicator .dropIndicator {
-    border: 3px #ddd dashed;
-    border-radius: 3px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 15px;
-    right: 15px;
-    z-index: -1; }
-  .indicator .dragIndicator, .indicator .addIndicator {
-    background-color: #fff;
-    border-radius: 3px;
-    color: #333;
-    min-height: 22rem;
-    opacity: 1;
-    padding: 2rem;
-    position: relative; }
-    .indicator .dragIndicator .closeIcon, .indicator .addIndicator .closeIcon {
-      color: #999;
-      position: absolute;
-      top: 8px;
-      right: 8px; }
-      .indicator .dragIndicator .closeIcon:hover, .indicator .addIndicator .closeIcon:hover {
-        color: darkred;
-        cursor: pointer; }
-    .indicator .dragIndicator .indicatorIcon, .indicator .addIndicator .indicatorIcon {
-      display: block;
-      font-size: 5rem;
-      text-align: center; }
-    .indicator .dragIndicator .description i.ico, .indicator .addIndicator .description i.ico {
-      font-size: 1.8rem;
-      margin: 0 0 0 1rem; }
-  .indicator .addIndicator {
-    background-color: darkred; }
 @font-face {
   font-family: 'ico';
   src: url(fonts/ico.eot);
@@ -1251,16 +1270,15 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-html {
+html, body {
   background-color: #333;
   color: #fff;
-  font-family: 'Raleway', sans-serif;
-  font-size: 10px; }
+  font-family: 'Raleway', sans-serif; }
 
 h1 {
   font-weight: 500;
   font-size: 2rem;
-  margin-bottom: 3rem;
+  margin: 2rem 0 3rem;
   text-transform: uppercase; }
 
 h2 {

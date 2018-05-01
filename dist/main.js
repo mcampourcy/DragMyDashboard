@@ -53786,70 +53786,6 @@ exports.default = Icon;
 
 /***/ }),
 
-/***/ "./src/components/Select.js":
-/*!**********************************!*\
-  !*** ./src/components/Select.js ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-__webpack_require__(/*! ./Select.scss */ "./src/components/Select.scss");
-
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : { default: obj };
-}
-
-var Select = function Select(_ref) {
-    var action = _ref.action,
-        options = _ref.options,
-        defaultOption = _ref.defaultOption,
-        value = _ref.value;
-    return _react2.default.createElement('select', { onChange: action }, value < 0 && _react2.default.createElement('option', null, defaultOption), options.map(function (option) {
-        return _react2.default.createElement('option', { value: option.id, key: option.name }, option.name);
-    }));
-};
-
-Select.propTypes = {
-    action: _propTypes2.default.func.isRequired,
-    options: _propTypes2.default.array.isRequired,
-    defaultOption: _propTypes2.default.string.isRequired,
-    value: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]).isRequired
-};
-
-Select.defaultProps = {
-    options: []
-};
-
-exports.default = Select;
-
-/***/ }),
-
-/***/ "./src/components/Select.scss":
-/*!************************************!*\
-  !*** ./src/components/Select.scss ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./src/containers/AddIndicator.js":
 /*!****************************************!*\
   !*** ./src/containers/AddIndicator.js ***!
@@ -53863,17 +53799,17 @@ exports.default = Select;
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-  };
+    function defineProperties(target, props) {
+        for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }return function (Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+    };
 }();
 
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -53886,90 +53822,106 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactFeather = __webpack_require__(/*! react-feather */ "./node_modules/react-feather/dist/index.js");
 
-var _Button = __webpack_require__(/*! ../components/Button */ "./src/components/Button.js");
+__webpack_require__(/*! ./AddIndicator.scss */ "./src/containers/AddIndicator.scss");
 
-var _Button2 = _interopRequireDefault(_Button);
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/containers/Modal.js");
 
-var _Select = __webpack_require__(/*! ../components/Select */ "./src/components/Select.js");
+var _Modal2 = _interopRequireDefault(_Modal);
 
-var _Select2 = _interopRequireDefault(_Select);
+var _ModalContent = __webpack_require__(/*! ./ModalContent */ "./src/containers/ModalContent.js");
+
+var _ModalContent2 = _interopRequireDefault(_ModalContent);
 
 function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
+    return obj && obj.__esModule ? obj : { default: obj };
 }
 
 function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
 }
 
 function _possibleConstructorReturn(self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
 }
 
 function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 }
 
 var AddIndicator = function (_Component) {
-  _inherits(AddIndicator, _Component);
+    _inherits(AddIndicator, _Component);
 
-  function AddIndicator(props) {
-    _classCallCheck(this, AddIndicator);
+    function AddIndicator(props) {
+        _classCallCheck(this, AddIndicator);
 
-    var _this = _possibleConstructorReturn(this, (AddIndicator.__proto__ || Object.getPrototypeOf(AddIndicator)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (AddIndicator.__proto__ || Object.getPrototypeOf(AddIndicator)).call(this, props));
 
-    _this.handleChange = _this.handleChange.bind(_this);
-    _this.handleClick = _this.handleClick.bind(_this);
-    _this.state = {
-      value: -1
-    };
-    return _this;
-  }
-
-  _createClass(AddIndicator, [{
-    key: 'handleChange',
-    value: function handleChange(event) {
-      this.setState({
-        value: parseInt(event.currentTarget.value)
-      });
+        _this.state = {
+            isActive: false
+        };
+        _this.addIndicator = _this.addIndicator.bind(_this);
+        _this.handleClick = _this.handleClick.bind(_this);
+        _this.handleClickOutside = _this.handleClickOutside.bind(_this);
+        return _this;
     }
-  }, {
-    key: 'handleClick',
-    value: function handleClick(e) {
-      e.preventDefault();
-      this.props.changeMenu();
-      this.props.addIndicator(this.state.value);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var indicators = this.props.indicators;
 
-      return _react2.default.createElement(_react.Fragment, null, _react2.default.createElement('span', { className: 'closeIcon' }, _react2.default.createElement(_reactFeather.X, { onClick: this.handleClickMenu })), _react2.default.createElement('form', null, _react2.default.createElement(_Select2.default, {
-        action: this.handleChange,
-        options: indicators.filter(function (i) {
-          return !i.selected;
-        }),
-        defaultOption: 'Add an indicator',
-        value: this.state.value
-      }), _react2.default.createElement(_Button2.default, { label: 'Add the indicator', action: this.handleClick, disabled: this.state.value <= 0 })));
-    }
-  }]);
+    _createClass(AddIndicator, [{
+        key: 'addIndicator',
+        value: function addIndicator(e) {
+            this.props.addIndicator(parseInt(e.currentTarget.dataset.id));
+            this.setState({
+                isActive: !this.state.isActive
+            });
+        }
+    }, {
+        key: 'handleClick',
+        value: function handleClick() {
+            this.setState({
+                isActive: !this.state.isActive
+            });
+        }
+    }, {
+        key: 'handleClickOutside',
+        value: function handleClickOutside(e, node) {
+            if (e.target === node) {
+                this.setState({ isActive: false });
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var indicators = this.props.indicators;
+            var isActive = this.state.isActive;
 
-  return AddIndicator;
+            return _react2.default.createElement(_react.Fragment, null, _react2.default.createElement(_reactFeather.PlusCircle, { className: 'addIcon', size: 48, onClick: this.handleClick }), isActive && _react2.default.createElement(_Modal2.default, { event: this.handleClickOutside }, _react2.default.createElement(_ModalContent2.default, { addIndicator: this.addIndicator, items: indicators })));
+        }
+    }]);
+
+    return AddIndicator;
 }(_react.Component);
 
 AddIndicator.propTypes = {
-  indicators: _propTypes2.default.array.isRequired
+    indicators: _propTypes2.default.array.isRequired
 };
 
 exports.default = AddIndicator;
+
+/***/ }),
+
+/***/ "./src/containers/AddIndicator.scss":
+/*!******************************************!*\
+  !*** ./src/containers/AddIndicator.scss ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -54161,12 +54113,7 @@ var DragList = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (DragList.__proto__ || Object.getPrototypeOf(DragList)).call(this, props));
 
-        _this.state = {
-            menu: false,
-            noMoreTools: false
-        };
         _this.handleClick = _this.handleClick.bind(_this);
-        _this.handleClickMenu = _this.handleClickMenu.bind(_this);
         _this.moveIndicator = _this.moveIndicator.bind(_this);
         _this.findIndicator = _this.findIndicator.bind(_this);
         return _this;
@@ -54183,11 +54130,6 @@ var DragList = function (_Component) {
         key: 'handleClick',
         value: function handleClick(id) {
             this.props.dispatch((0, _index.toggleIndicator)(id));
-        }
-    }, {
-        key: 'handleClickMenu',
-        value: function handleClickMenu() {
-            this.setState({ menu: !this.state.menu });
         }
 
         /** == Drag N Drop FUNCTIONS == **/
@@ -54234,6 +54176,11 @@ var DragList = function (_Component) {
                 connectDropTarget = _props.connectDropTarget,
                 indicators = _props.indicators;
 
+            var selected = indicators.filter(function (indicator) {
+                return !indicator.selected;
+            });
+            var allSelected = selected.length === 0;
+
             return connectDropTarget(_react2.default.createElement('div', { className: 'row' }, _react2.default.createElement('div', { className: 'col-12' }, _react2.default.createElement('h1', null, 'My wonderful Pathfinder Dashboard')), indicators.length > 0 && indicators.map(function (indicator) {
                 return indicator.selected && _react2.default.createElement(_Indicator2.default, {
                     id: indicator.id,
@@ -54243,11 +54190,10 @@ var DragList = function (_Component) {
                     findIndicator: _this2.findIndicator,
                     key: '' + indicator.id
                 });
-            }), _react2.default.createElement('div', { className: 'col-sm-4 indicator' }, this.state.menu ? _react2.default.createElement('div', { className: 'addIndicator' }, _react2.default.createElement(_AddIndicator2.default, {
+            }), _react2.default.createElement('div', { className: 'col-sm-4 indicator' }, !allSelected && _react2.default.createElement('div', { className: 'addIndicator' }, _react2.default.createElement(_AddIndicator2.default, {
                 indicators: indicators,
-                changeMenu: this.handleClickMenu,
                 addIndicator: this.handleClick
-            })) : !this.state.noMoreTools && _react2.default.createElement('div', { className: 'dragIndicator' }, _react2.default.createElement(_Button2.default, { label: 'Add an indicator', action: this.handleClickMenu })))));
+            })))));
         }
     }]);
 
@@ -54455,6 +54401,176 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   CARD: 'card'
 };
+
+/***/ }),
+
+/***/ "./src/containers/Modal.js":
+/*!*********************************!*\
+  !*** ./src/containers/Modal.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () {
+    function defineProperties(target, props) {
+        for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }return function (Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+    };
+}();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+__webpack_require__(/*! ./Modal.scss */ "./src/containers/Modal.scss");
+
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+
+function _possibleConstructorReturn(self, call) {
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var modalRoot = document.querySelector('[is="modal-content"]');
+
+var Modal = function (_React$Component) {
+    _inherits(Modal, _React$Component);
+
+    function Modal(props) {
+        _classCallCheck(this, Modal);
+
+        var _this = _possibleConstructorReturn(this, (Modal.__proto__ || Object.getPrototypeOf(Modal)).call(this, props));
+
+        _this.handleClick = _this.handleClick.bind(_this);
+        return _this;
+    }
+
+    _createClass(Modal, [{
+        key: 'handleClick',
+        value: function handleClick(e) {
+            this.props.event(e, this.node);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _reactDom2.default.createPortal(_react2.default.createElement('div', { className: 'modal', ref: function ref(node) {
+                    _this2.node = node;
+                }, onClick: this.handleClick }, this.props.children), modalRoot);
+        }
+    }]);
+
+    return Modal;
+}(_react2.default.Component);
+
+Modal.propTypes = {
+    event: _propTypes2.default.func.isRequired
+};
+
+exports.default = Modal;
+
+/***/ }),
+
+/***/ "./src/containers/Modal.scss":
+/*!***********************************!*\
+  !*** ./src/containers/Modal.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/containers/ModalContent.js":
+/*!****************************************!*\
+  !*** ./src/containers/ModalContent.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+__webpack_require__(/*! ./ModalContent.scss */ "./src/containers/ModalContent.scss");
+
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
+
+var ModalContent = function ModalContent(_ref) {
+    var items = _ref.items,
+        addIndicator = _ref.addIndicator;
+    return _react2.default.createElement('div', { className: 'container' }, _react2.default.createElement('div', { className: 'row' }, items.map(function (item) {
+        return !item.selected && _react2.default.createElement('div', { key: item.id, className: 'col-sm-3 indicatorCard', onClick: addIndicator, 'data-id': item.id }, item.icon && _react2.default.createElement('span', { className: 'indicatorIcon' }, _react2.default.createElement('i', { className: 'ico ico-' + item.icon }, ' ')), _react2.default.createElement('h2', null, item.name));
+    })));
+};
+
+ModalContent.propTypes = {
+    items: _propTypes2.default.array.isRequired,
+    addIndicator: _propTypes2.default.func.isRequired
+};
+
+exports.default = ModalContent;
+
+/***/ }),
+
+/***/ "./src/containers/ModalContent.scss":
+/*!******************************************!*\
+  !*** ./src/containers/ModalContent.scss ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
