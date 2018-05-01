@@ -1,4 +1,4 @@
-@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap-grid";
 @import "fonts/ico.css";
 
 * {
@@ -10,13 +10,12 @@ html, body {
   background-color: #333;
   color: #fff;
   font-family: 'Raleway', sans-serif;
-  font-size: 10px;
 }
 
 h1 {
   font-weight: 500;
   font-size: 2rem;
-  margin-bottom: 3rem;
+  margin: 2rem 0 3rem;
   text-transform: uppercase;
 }
 
