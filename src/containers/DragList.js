@@ -20,12 +20,7 @@ const indicatorTarget = {
 class DragList extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            menu: false,
-            noMoreTools: false
-        };
         this.handleClick = this.handleClick.bind(this);
-        this.handleClickMenu = this.handleClickMenu.bind(this);
         this.moveIndicator = this.moveIndicator.bind(this);
         this.findIndicator = this.findIndicator.bind(this);
     }
@@ -36,11 +31,7 @@ class DragList extends Component {
     }
 
     handleClick(id) {
-        this.props.dispatch(toggleIndicator(id))
-    }
-
-    handleClickMenu() {
-        this.setState({menu: !this.state.menu})
+        this.props.dispatch(toggleIndicator(id));
     }
 
     /** == Drag N Drop FUNCTIONS == **/
@@ -72,6 +63,9 @@ class DragList extends Component {
 
     render() {
         const { connectDropTarget, indicators } = this.props;
+        const selected      = indicators.filter(indicator => !indicator.selected);
+        const allSelected   = selected.length === 0;
+
         return connectDropTarget(
             <div className="row">
                 <div className="col-12">
@@ -92,18 +86,12 @@ class DragList extends Component {
                 }
 
                 <div className='col-sm-4 indicator'>
-                {this.state.menu ?
+                {!allSelected &&
                     <div className='addIndicator'>
                         <AddIndicator
                             indicators={indicators}
-                            changeMenu={this.handleClickMenu}
                             addIndicator={this.handleClick}
                         />
-                    </div>
-                    :
-                    !this.state.noMoreTools &&
-                    <div className='dragIndicator'>
-                        <Button label='Add an indicator' action={this.handleClickMenu}/>
                     </div>
                 }
                 </div>

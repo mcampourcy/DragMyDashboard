@@ -12,7 +12,7 @@
     z-index: -1;
   }
 
-  .dragIndicator, .addIndicator {
+  .dragIndicator {
     background-color: #fff;
     border-radius: 3px;
     color: #333;
@@ -44,10 +44,6 @@
         margin: 0 0 0 1rem;
       }
     }
-  }
-
-  .addIndicator {
-    background-color: darkred;
   }
 
 }

@@ -1,0 +1,13 @@
+.addIndicator {
+  background-color: transparent;
+  h2 {
+    margin: 0 0 1.5rem;
+  }
+  .addIcon {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
