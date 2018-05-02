@@ -8,6 +8,8 @@
     "build:watch": "webpack --watch --mode development --module-bind js=babel-loader",
     "build:dev": "webpack --mode development --module-bind js=babel-loader",
     "build": "webpack --mode production --module-bind js=babel-loader",
+    "lint": "eslint src/**",
+    "lint:fix": "eslint --fix src/**",
     "start": "webpack-dev-server --mode development --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -38,6 +40,9 @@
   },
   "dependencies": {
     "bootstrap": "^4.1.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-compat": "^2.2.0",
+    "eslint-plugin-react": "^7.7.0",
     "react": "^16.3.2",
     "react-dnd": "^2.6.0",
     "react-dnd-html5-backend": "^2.6.0",
