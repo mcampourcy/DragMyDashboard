@@ -8,7 +8,7 @@ export function toggleIndicator(id) {
   return {
     type: TOGGLE_INDICATOR,
     id
-  }
+  };
 }
 
 export function changePosition(draggedId, hoveredId) {
@@ -16,31 +16,31 @@ export function changePosition(draggedId, hoveredId) {
     type: CHANGE_POSITION,
     draggedId,
     hoveredId
-  }
+  };
 }
 
 function requestPosts() {
   return {
     type: REQUEST_POSTS
-  }
+  };
 }
 
 function receivePosts(json) {
   return {
     type: RECEIVE_POSTS,
     posts: json
-  }
+  };
 }
 
 function fetchPosts() {
   return dispatch => {
     dispatch(requestPosts());
     dispatch(receivePosts(data));
-  }
+  };
 }
 
 function shouldFetchPosts(state) {
-  const indicators = state.indicatorsFromUser["indicators"];
+  const indicators = state.indicatorsFromUser['indicators'];
   if (!indicators) {
     return true;
   } else if (indicators.isFetching) {
@@ -55,5 +55,5 @@ export function fetchPostsIfNeeded() {
     if (shouldFetchPosts(getState())) {
       return dispatch(fetchPosts());
     }
-  }
+  };
 }

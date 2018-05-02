@@ -7,27 +7,28 @@ const modalRoot = document.querySelector('[is="modal-content"]');
 
 class Modal extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-    handleClick(e) {
-        this.props.event(e, this.node);
-    }
+  handleClick(e) {
+    this.props.event(e, this.node);
+  }
 
-    render() {
-        return ReactDOM.createPortal(
-            <div className="modal" ref={node => { this.node = node }} onClick={this.handleClick}>
-                {this.props.children}
-            </div>,
-            modalRoot
-        );
-    }
+  render() {
+    return ReactDOM.createPortal(
+      <div className="modal" ref={node => { this.node = node; }} onClick={this.handleClick}>
+        {this.props.children}
+      </div>,
+      modalRoot
+    );
+  }
 }
 
 Modal.propTypes = {
-    event: PropTypes.func.isRequired
+  event: PropTypes.func.isRequired,
+  children: PropTypes.func.isRequired
 };
 
 export default Modal;
