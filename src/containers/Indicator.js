@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {DragSource, DropTarget} from 'react-dnd';
 import { X as Close } from 'react-feather';
-import ItemTypes from './ItemTypes';
 import Icon from '../components/Icon';
 import './Indicator.scss'
 
@@ -77,9 +76,9 @@ Indicator.propTypes = {
   moveIndicator: PropTypes.func.isRequired,
 };
 
-export default DropTarget(ItemTypes.CARD, indicatorTarget, connect => ({
+export default DropTarget('card', indicatorTarget, connect => ({
   connectDropTarget: connect.dropTarget(),
-}))(DragSource(ItemTypes.CARD, indicatorSource, (connect, monitor) => ({
+}))(DragSource('card', indicatorSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
   isDragging: monitor.isDragging(),
 }))(Indicator));
