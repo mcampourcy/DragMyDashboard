@@ -68,6 +68,10 @@ const config = {
             })
         }]
     },
+    devServer: {
+        publicPath: "/",
+        contentBase: "./dist"
+    },
     devtool: 'source-map',
     plugins: [
         new webpack.DefinePlugin({
