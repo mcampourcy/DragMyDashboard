@@ -1,59 +1,39 @@
-import data from '../data/test.json';
-export const REQUEST_POSTS = 'REQUEST_POSTS';
-export const RECEIVE_POSTS = 'RECEIVE_POSTS';
-export const TOGGLE_INDICATOR = 'TOGGLE_INDICATOR';
-export const CHANGE_POSITION = 'CHANGE_POSITION';
+import data from '../data/test';
+import { changePosition } from "./changePosition";
+import { receivePosts } from "./receivePosts";
+import { requestPosts } from "./requestPosts";
+import { toggleIndicator } from "./toggleIndicator";
 
-export function toggleIndicator(id) {
-  return {
-    type: TOGGLE_INDICATOR,
-    id
-  };
-}
+const fetchPosts = () => {
+    return dispatch => {
+        dispatch(requestPosts());
+        dispatch(receivePosts(data));
+    };
+};
 
-export function changePosition(draggedId, hoveredId) {
-  return {
-    type: CHANGE_POSITION,
-    draggedId,
-    hoveredId
-  };
-}
-
-function requestPosts() {
-  return {
-    type: REQUEST_POSTS
-  };
-}
-
-function receivePosts(json) {
-  return {
-    type: RECEIVE_POSTS,
-    posts: json
-  };
-}
-
-function fetchPosts() {
-  return dispatch => {
-    dispatch(requestPosts());
-    dispatch(receivePosts(data));
-  };
-}
-
-function shouldFetchPosts(state) {
-  const indicators = state.indicatorsFromUser['indicators'];
-  if (!indicators) {
-    return true;
-  } else if (indicators.isFetching) {
-    return false;
-  } else {
-    return indicators.didInvalidate;
-  }
-}
-
-export function fetchPostsIfNeeded() {
-  return (dispatch, getState) => {
-    if (shouldFetchPosts(getState())) {
-      return dispatch(fetchPosts());
+const shouldFetchPosts = (state) => {
+    const indicators = state.indicators;
+    if (indicators.length === 0 || !indicators) {
+        return true;
+    } else if (indicators.isFetching) {
+        return false;
+    } else {
+        return indicators.didInvalidate;
     }
-  };
-}
+};
+
+const manageIndicators = () => {
+    return (dispatch, getState) => {
+        if (shouldFetchPosts(getState())) {
+            return dispatch(fetchPosts());
+        }
+    };
+};
+
+export {
+  changePosition,
+  manageIndicators,
+  receivePosts,
+  requestPosts,
+  toggleIndicator
+};

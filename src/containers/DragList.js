@@ -5,7 +5,7 @@ import {DragDropContext, DropTarget} from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 // Actions
 import { connect } from 'react-redux';
-import { toggleIndicator, changePosition, fetchPostsIfNeeded } from '../actions/index';
+import { toggleIndicator, changePosition, manageIndicators } from '../actions';
 // Containers
 import AddIndicator from './AddIndicator';
 import Indicator from './Indicator';
@@ -26,7 +26,7 @@ class DragList extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(fetchPostsIfNeeded());
+    dispatch(manageIndicators());
   }
 
   handleClick(id) {
@@ -86,12 +86,12 @@ class DragList extends Component {
 
         <div className='col-sm-4 indicator'>
           {!allSelected &&
-                    <div className='addIndicator'>
-                      <AddIndicator
-                        indicators={indicators}
-                        handleChange={this.handleClick}
-                      />
-                    </div>
+            <div className='addIndicator'>
+              <AddIndicator
+                indicators={indicators}
+                handleChange={this.handleClick}
+              />
+            </div>
           }
         </div>
       </div>
@@ -106,16 +106,14 @@ DragList.propTypes = {
 };
 
 function mapStateToProps(state) {
-  const { indicatorsFromUser } = state;
-  const {
-    items: indicators
-  } = indicatorsFromUser['indicators'] || {
-    items: []
-  };
-
-  return {
-    indicators
-  };
+  const { indicators } = state || [];
+  return { indicators };
 }
 
-export default connect(mapStateToProps)(DragDropContext(HTML5Backend)(DropTarget(ItemTypes.CARD, indicatorTarget, connect => ({ connectDropTarget: connect.dropTarget() }))(DragList)));
+export default connect(mapStateToProps)(
+    DragDropContext(HTML5Backend)(
+        DropTarget(ItemTypes.CARD, indicatorTarget, connect => (
+            { connectDropTarget: connect.dropTarget() }
+        ))
+    (DragList))
+);

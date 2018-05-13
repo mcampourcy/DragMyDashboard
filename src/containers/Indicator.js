@@ -54,8 +54,8 @@ class Indicator extends Component {
             <h2>{indicator.name}</h2>
 
             <p className='description'>
-              <strong>{data.stock}</strong> {data.name}{data.stock > 1 && 's'}
-              <Icon icon='coins' label={data.cost * data.stock}/>
+              <strong>{data.stock}</strong> {data.name}{data.stock > 1 && 's'}<br />
+              <Icon icon='coins' label={data.cost * data.stock}/><br />
               {data.damages &&
                     <Icon icon='bandage' label={data.damages}/>
               }
