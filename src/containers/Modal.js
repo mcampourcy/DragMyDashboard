@@ -28,7 +28,7 @@ class Modal extends React.Component {
 
 Modal.propTypes = {
   event: PropTypes.func.isRequired,
-  children: PropTypes.func.isRequired
+  children: PropTypes.object.isRequired
 };
 
 export default Modal;
